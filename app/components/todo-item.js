@@ -2,8 +2,15 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   actions: {
-    editTodo: function(){
+    editTodo: function() {
       this.set('isEditing', true);
+    },
+    acceptChanges: function() {
+      this.set('isEditing', false);
+      this.sendAction('acceptChanges', this.get("todo"));
+    },
+    deleteTodo: function(todo) {
+      todo.sendAction('deleteTodo');
     }
   }
 });
