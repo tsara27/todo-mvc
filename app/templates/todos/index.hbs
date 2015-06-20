@@ -1,1 +1,5 @@
-<h1>Test</h1>
+<ul id="todo-list">
+  {{#each todo in model}}
+    {{todo-item todo=todo acceptChanges="acceptChanges" deleteTodo="deleteTodo"}}
+  {{/each}}
+</ul>
